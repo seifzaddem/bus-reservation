@@ -1,0 +1,16 @@
+<div class="add-reservation">
+  <form *ngIf="cities$ | async as cities else loading" [formGroup]="form" class="add-reservation__container">
+    <mat-card>
+      <mat-form-field appearance="fill">
+        <mat-label>Départ</mat-label>
+        <mat-select [formControlName]="DEPARTURE_FORM_KEY">
+          <mat-option *ngFor="let city of cities" [value]="city">
+            {{city.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card>
+  </form>
+</div>
+
+<ng-template #loading>Loading...</ng-template>
