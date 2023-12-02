@@ -25,7 +25,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Date de départ</mat-label>
-      <input [formControlName]="DATE_FORM_KEY" [matDatepicker]="dp" matInput readonly="true">
+      <input [formControlName]="DATE_FORM_KEY" [matDatepicker]="dp" [min]="currentDate" matInput readonly="true">
       <mat-datepicker-toggle [for]="dp" matSuffix></mat-datepicker-toggle>
       <mat-datepicker #dp disabled="false"></mat-datepicker>
     </mat-form-field>
@@ -33,7 +33,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Passagers</mat-label>
       <mat-select [formControlName]="SEATS_FORM_KEY">
-        <mat-option *ngFor="let number of numbers" [value]="number">
+        <mat-option *ngFor="let number of seats" [value]="number">
           {{ number }}
         </mat-option>
       </mat-select>

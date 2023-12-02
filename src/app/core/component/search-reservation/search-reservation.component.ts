@@ -17,7 +17,8 @@ export class SearchReservationComponent implements OnInit {
   departureCities: CityModel[] = [];
   arrivalCities: CityModel[] = [];
   form: FormGroup;
-  numbers: number[] = [1, 2, 3, 4, 5];
+  seats: number[] = [1, 2, 3, 4, 5];
+  currentDate = new Date();
   readonly DEPARTURE_FORM_KEY: keyof SearchReservationModel = 'departure';
   readonly ARRIVAL_FORM_KEY: keyof SearchReservationModel = 'arrival';
   readonly DATE_FORM_KEY: keyof SearchReservationModel = 'date';

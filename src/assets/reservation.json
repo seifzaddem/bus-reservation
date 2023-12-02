@@ -16,7 +16,7 @@
           "id": 2,
           "name": "Marseille"
         },
-        "date": "2023-12-01T08:00:00",
+        "date": "2024-01-01T08:00:00",
         "price": 30,
         "availableSeats": 48
       },
@@ -34,7 +34,7 @@
           "id": 4,
           "name": "Toulouse"
         },
-        "date": "2023-12-02T10:30:00",
+        "date": "2024-01-02T10:30:00",
         "price": 25,
         "availableSeats": 39
       }
@@ -56,7 +56,7 @@
             "id": 2,
             "name": "Marseille"
           },
-          "date": "2023-12-01T08:00:00",
+          "date": "2024-01-01T08:00:00",
           "price": 30,
           "availableSeats": 48
         },
@@ -77,7 +77,7 @@
             "id": 4,
             "name": "Toulouse"
           },
-          "date": "2023-12-02T10:30:00",
+          "date": "2024-01-02T10:30:00",
           "price": 25,
           "availableSeats": 39
         },
@@ -102,7 +102,7 @@
           "id": 6,
           "name": "Nantes"
         },
-        "date": "2023-12-03T12:45:00",
+        "date": "2024-01-03T12:45:00",
         "price": 35,
         "availableSeats": 53
       },
@@ -120,7 +120,7 @@
           "id": 8,
           "name": "Montpellier"
         },
-        "date": "2023-12-04T14:15:00",
+        "date": "2024-01-04T14:15:00",
         "price": 28,
         "availableSeats": 46
       }
@@ -142,7 +142,7 @@
             "id": 6,
             "name": "Nantes"
           },
-          "date": "2023-12-03T12:45:00",
+          "date": "2024-01-03T12:45:00",
           "price": 35,
           "availableSeats": 53
         },
@@ -163,7 +163,7 @@
             "id": 8,
             "name": "Montpellier"
           },
-          "date": "2023-12-04T14:15:00",
+          "date": "2024-01-04T14:15:00",
           "price": 28,
           "availableSeats": 46
         },
@@ -188,7 +188,7 @@
           "id": 10,
           "name": "Lille"
         },
-        "date": "2023-12-05T16:30:00",
+        "date": "2024-01-05T16:30:00",
         "price": 40,
         "availableSeats": 58
       },
@@ -206,7 +206,7 @@
           "id": 12,
           "name": "Reims"
         },
-        "date": "2023-12-06T18:00:00",
+        "date": "2024-01-06T18:00:00",
         "price": 22,
         "availableSeats": 33
       }
@@ -228,7 +228,7 @@
             "id": 10,
             "name": "Lille"
           },
-          "date": "2023-12-05T16:30:00",
+          "date": "2024-01-05T16:30:00",
           "price": 40,
           "availableSeats": 58
         },
@@ -249,7 +249,7 @@
             "id": 12,
             "name": "Reims"
           },
-          "date": "2023-12-06T18:00:00",
+          "date": "2024-01-06T18:00:00",
           "price": 22,
           "availableSeats": 33
         },
@@ -274,7 +274,7 @@
           "id": 14,
           "name": "Saint-Étienne"
         },
-        "date": "2023-12-07T20:15:00",
+        "date": "2024-01-07T20:15:00",
         "price": 32,
         "availableSeats": 40
       },
@@ -292,7 +292,7 @@
           "id": 16,
           "name": "Grenoble"
         },
-        "date": "2023-12-08T22:45:00",
+        "date": "2024-01-08T22:45:00",
         "price": 26,
         "availableSeats": 36
       }
@@ -314,7 +314,7 @@
             "id": 14,
             "name": "Saint-Étienne"
           },
-          "date": "2023-12-07T20:15:00",
+          "date": "2024-01-07T20:15:00",
           "price": 32,
           "availableSeats": 40
         },
@@ -335,7 +335,7 @@
             "id": 16,
             "name": "Grenoble"
           },
-          "date": "2023-12-08T22:45:00",
+          "date": "2024-01-08T22:45:00",
           "price": 26,
           "availableSeats": 36
         },
@@ -360,7 +360,7 @@
           "id": 18,
           "name": "Angers"
         },
-        "date": "2023-12-09T09:30:00",
+        "date": "2024-01-09T09:30:00",
         "price": 33,
         "availableSeats": 42
       },
@@ -378,7 +378,7 @@
           "id": 20,
           "name": "Aix-en-Provence"
         },
-        "date": "2023-12-10T11:00:00",
+        "date": "2024-01-10T11:00:00",
         "price": 38,
         "availableSeats": 51
       }
@@ -400,7 +400,7 @@
             "id": 18,
             "name": "Angers"
           },
-          "date": "2023-12-09T09:30:00",
+          "date": "2024-01-09T09:30:00",
           "price": 33,
           "availableSeats": 42
         },
@@ -421,7 +421,7 @@
             "id": 20,
             "name": "Aix-en-Provence"
           },
-          "date": "2023-12-10T11:00:00",
+          "date": "2024-01-10T11:00:00",
           "price": 38,
           "availableSeats": 51
         },
