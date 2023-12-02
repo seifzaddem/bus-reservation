@@ -2,111 +2,181 @@
   {
     "id": 1,
     "bus": {
-      "serial": 101,
+      "serial": 1,
       "seats": 50
     },
-    "departure": "Paris",
-    "arrival": "Marseille",
+    "departure": {
+      "id": 1,
+      "name": "Paris"
+    },
+    "arrival": {
+      "id": 2,
+      "name": "Marseille"
+    },
     "date": "2023-12-01T08:00:00",
-    "price": "30"
+    "price": 30,
+    "availableSeats": 48
   },
   {
     "id": 2,
     "bus": {
-      "serial": 102,
+      "serial": 2,
       "seats": 40
     },
-    "departure": "Lyon",
-    "arrival": "Toulouse",
+    "departure": {
+      "id": 3,
+      "name": "Lyon"
+    },
+    "arrival": {
+      "id": 4,
+      "name": "Toulouse"
+    },
     "date": "2023-12-02T10:30:00",
-    "price": "25"
+    "price": 25,
+    "availableSeats": 39
   },
   {
     "id": 3,
     "bus": {
-      "serial": 103,
+      "serial": 3,
       "seats": 55
     },
-    "departure": "Nice",
-    "arrival": "Nantes",
+    "departure": {
+      "id": 5,
+      "name": "Nice"
+    },
+    "arrival": {
+      "id": 6,
+      "name": "Nantes"
+    },
     "date": "2023-12-03T12:45:00",
-    "price": "35"
+    "price": 35,
+    "availableSeats": 53
   },
   {
     "id": 4,
     "bus": {
-      "serial": 104,
+      "serial": 4,
       "seats": 48
     },
-    "departure": "Strasbourg",
-    "arrival": "Montpellier",
+    "departure": {
+      "id": 7,
+      "name": "Strasbourg"
+    },
+    "arrival": {
+      "id": 8,
+      "name": "Montpellier"
+    },
     "date": "2023-12-04T14:15:00",
-    "price": "28"
+    "price": 28,
+    "availableSeats": 46
   },
   {
     "id": 5,
     "bus": {
-      "serial": 105,
+      "serial": 5,
       "seats": 60
     },
-    "departure": "Bordeaux",
-    "arrival": "Lille",
+    "departure": {
+      "id": 9,
+      "name": "Bordeaux"
+    },
+    "arrival": {
+      "id": 10,
+      "name": "Lille"
+    },
     "date": "2023-12-05T16:30:00",
-    "price": "40"
+    "price": 40,
+    "availableSeats": 58
   },
   {
     "id": 6,
     "bus": {
-      "serial": 106,
+      "serial": 6,
       "seats": 35
     },
-    "departure": "Rennes",
-    "arrival": "Reims",
+    "departure": {
+      "id": 11,
+      "name": "Rennes"
+    },
+    "arrival": {
+      "id": 12,
+      "name": "Reims"
+    },
     "date": "2023-12-06T18:00:00",
-    "price": "22"
+    "price": 22,
+    "availableSeats": 33
   },
   {
     "id": 7,
     "bus": {
-      "serial": 107,
+      "serial": 7,
       "seats": 42
     },
-    "departure": "Le Havre",
-    "arrival": "Saint-Étienne",
+    "departure": {
+      "id": 13,
+      "name": "Le Havre"
+    },
+    "arrival": {
+      "id": 14,
+      "name": "Saint-Étienne"
+    },
     "date": "2023-12-07T20:15:00",
-    "price": "32"
+    "price": 32,
+    "availableSeats": 40
   },
   {
     "id": 8,
     "bus": {
-      "serial": 108,
+      "serial": 8,
       "seats": 38
     },
-    "departure": "Toulon",
-    "arrival": "Grenoble",
+    "departure": {
+      "id": 15,
+      "name": "Toulon"
+    },
+    "arrival": {
+      "id": 16,
+      "name": "Grenoble"
+    },
     "date": "2023-12-08T22:45:00",
-    "price": "26"
+    "price": 26,
+    "availableSeats": 36
   },
   {
     "id": 9,
     "bus": {
-      "serial": 109,
+      "serial": 9,
       "seats": 45
     },
-    "departure": "Dijon",
-    "arrival": "Angers",
+    "departure": {
+      "id": 17,
+      "name": "Dijon"
+    },
+    "arrival": {
+      "id": 18,
+      "name": "Angers"
+    },
     "date": "2023-12-09T09:30:00",
-    "price": "33"
+    "price": 33,
+    "availableSeats": 43
   },
   {
     "id": 10,
     "bus": {
-      "serial": 110,
+      "serial": 10,
       "seats": 55
     },
-    "departure": "Nîmes",
-    "arrival": "Aix-en-Provence",
+    "departure": {
+      "id": 19,
+      "name": "Nîmes"
+    },
+    "arrival": {
+      "id": 20,
+      "name": "Aix-en-Provence"
+    },
     "date": "2023-12-10T11:00:00",
-    "price": "38"
+    "price": 38,
+    "availableSeats": 52
   }
 ]

@@ -1,4 +1,5 @@
 import {JourneyModel} from './journey.model';
+import {CityModel} from './city.model';
 
 export interface ReservationModel {
   id: number;
@@ -8,13 +9,13 @@ export interface ReservationModel {
 }
 
 export interface SeatsReserved {
-  journeyId: number;
+  journey: JourneyModel;
   seats: number;
 }
 
-export interface AddReservationModel {
-  departure: string;
-  arrival: string;
-  passenger: number;
+export interface SearchReservationModel {
+  departure: CityModel;
+  arrival: CityModel;
+  seats: number;
   date: Date;
 }

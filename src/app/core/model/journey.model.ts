@@ -1,10 +1,12 @@
 import {BusModel} from './bus.model';
+import {CityModel} from './city.model';
 
 export interface JourneyModel {
   id: number;
   bus: BusModel;
-  departure: string;
-  arrival: string;
+  departure: CityModel;
+  arrival: CityModel;
   date: Date;
-  price: string;
+  price: number;
+  availableSeats: number;
 }

@@ -1,8 +1,8 @@
 <div class="reservation">
 
   <ng-container *ngIf="cities$ | async as cities else loading">
-    <app-add-reservation [cities]="cities">
-    </app-add-reservation>
+    <app-search-reservation (searchReservation)="searchReservation($event)" [cities]="cities">
+    </app-search-reservation>
 
   </ng-container>
 </div>

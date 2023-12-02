@@ -10,7 +10,7 @@
       </mat-select>
     </mat-form-field>
 
-    <button (click)="switchCities()" mat-icon-button>
+    <button (click)="switchCities()" mat-icon-button type="button">
       <mat-icon color="primary">compare_arrows</mat-icon>
     </button>
 
@@ -32,14 +32,14 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Passagers</mat-label>
-      <mat-select [formControlName]="PASSENGER_FORM_KEY">
+      <mat-select [formControlName]="SEATS_FORM_KEY">
         <mat-option *ngFor="let number of numbers" [value]="number">
           {{ number }}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
-    <button color="primary" mat-raised-button type="submit">Chercher</button>
+    <button [disabled]="form.invalid" color="primary" mat-raised-button type="submit">Chercher</button>
 
   </mat-card>
 </form>

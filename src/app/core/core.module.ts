@@ -12,13 +12,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {ReservationComponent} from './pages/reservation/reservation.component';
-import {AddReservationComponent} from './component/add-reservation/add-reservation.component';
+import {SearchReservationComponent} from './component/search-reservation/search-reservation.component';
 
 
 @NgModule({
   declarations: [
     ReservationComponent,
-    AddReservationComponent
+    SearchReservationComponent
   ],
   imports: [
     CommonModule,
