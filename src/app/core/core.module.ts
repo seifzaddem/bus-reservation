@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {AddReservationComponent} from './pages/add-reservation/add-reservation.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
@@ -12,13 +11,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { ReservationComponent } from './pages/reservation/reservation.component';
+import {ReservationComponent} from './pages/reservation/reservation.component';
+import {AddReservationComponent} from './component/add-reservation/add-reservation.component';
 
 
 @NgModule({
   declarations: [
-    AddReservationComponent,
-    ReservationComponent
+    ReservationComponent,
+    AddReservationComponent
   ],
   imports: [
     CommonModule,
