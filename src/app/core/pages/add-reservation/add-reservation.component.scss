@@ -6,6 +6,16 @@
   align-items: center;
 
   &__container {
+    display: flex;
 
+    &__card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
   }
+}
+
+::ng-deep .add-reservation .mat-form-field-wrapper {
+  padding-bottom: 0;
 }

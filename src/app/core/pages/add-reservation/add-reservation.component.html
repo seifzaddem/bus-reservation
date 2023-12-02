@@ -1,14 +1,47 @@
 <div class="add-reservation">
-  <form *ngIf="cities$ | async as cities else loading" [formGroup]="form" class="add-reservation__container">
-    <mat-card>
-      <mat-form-field appearance="fill">
+  <form (ngSubmit)="search()" *ngIf="cities$ | async else loading" [formGroup]="form"
+        class="add-reservation__container">
+    <mat-card class="add-reservation__container__card">
+      <mat-form-field appearance="outline">
         <mat-label>Départ</mat-label>
         <mat-select [formControlName]="DEPARTURE_FORM_KEY">
-          <mat-option *ngFor="let city of cities" [value]="city">
+          <mat-option *ngFor="let city of departureCities" [value]="city">
             {{city.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+
+      <button (click)="switchCities()" mat-icon-button>
+        <mat-icon color="primary">compare_arrows</mat-icon>
+      </button>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Arrivée</mat-label>
+        <mat-select [formControlName]="ARRIVAL_FORM_KEY">
+          <mat-option *ngFor="let city of arrivalCities" [value]="city">
+            {{city.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date de départ</mat-label>
+        <input [formControlName]="DATE_FORM_KEY" [matDatepicker]="dp" matInput readonly="true">
+        <mat-datepicker-toggle [for]="dp" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #dp disabled="false"></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Passagers</mat-label>
+        <mat-select [formControlName]="PASSENGER_FORM_KEY">
+          <mat-option *ngFor="let number of numbers" [value]="number">
+            {{ number }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button color="primary" mat-raised-button type="submit">Chercher</button>
+
     </mat-card>
   </form>
 </div>
