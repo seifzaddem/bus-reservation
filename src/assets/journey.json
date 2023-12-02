@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "bus": {
+      "serial": 101,
+      "seats": 50
+    },
+    "departure": "Paris",
+    "arrival": "Marseille",
+    "date": "2023-12-01T08:00:00",
+    "price": "30"
+  },
+  {
+    "id": 2,
+    "bus": {
+      "serial": 102,
+      "seats": 40
+    },
+    "departure": "Lyon",
+    "arrival": "Toulouse",
+    "date": "2023-12-02T10:30:00",
+    "price": "25"
+  },
+  {
+    "id": 3,
+    "bus": {
+      "serial": 103,
+      "seats": 55
+    },
+    "departure": "Nice",
+    "arrival": "Nantes",
+    "date": "2023-12-03T12:45:00",
+    "price": "35"
+  },
+  {
+    "id": 4,
+    "bus": {
+      "serial": 104,
+      "seats": 48
+    },
+    "departure": "Strasbourg",
+    "arrival": "Montpellier",
+    "date": "2023-12-04T14:15:00",
+    "price": "28"
+  },
+  {
+    "id": 5,
+    "bus": {
+      "serial": 105,
+      "seats": 60
+    },
+    "departure": "Bordeaux",
+    "arrival": "Lille",
+    "date": "2023-12-05T16:30:00",
+    "price": "40"
+  },
+  {
+    "id": 6,
+    "bus": {
+      "serial": 106,
+      "seats": 35
+    },
+    "departure": "Rennes",
+    "arrival": "Reims",
+    "date": "2023-12-06T18:00:00",
+    "price": "22"
+  },
+  {
+    "id": 7,
+    "bus": {
+      "serial": 107,
+      "seats": 42
+    },
+    "departure": "Le Havre",
+    "arrival": "Saint-Étienne",
+    "date": "2023-12-07T20:15:00",
+    "price": "32"
+  },
+  {
+    "id": 8,
+    "bus": {
+      "serial": 108,
+      "seats": 38
+    },
+    "departure": "Toulon",
+    "arrival": "Grenoble",
+    "date": "2023-12-08T22:45:00",
+    "price": "26"
+  },
+  {
+    "id": 9,
+    "bus": {
+      "serial": 109,
+      "seats": 45
+    },
+    "departure": "Dijon",
+    "arrival": "Angers",
+    "date": "2023-12-09T09:30:00",
+    "price": "33"
+  },
+  {
+    "id": 10,
+    "bus": {
+      "serial": 110,
+      "seats": 55
+    },
+    "departure": "Nîmes",
+    "arrival": "Aix-en-Provence",
+    "date": "2023-12-10T11:00:00",
+    "price": "38"
+  }
+]

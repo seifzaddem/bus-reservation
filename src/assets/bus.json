@@ -1,0 +1,42 @@
+[
+  {
+    "serial": 101,
+    "seats": 50
+  },
+  {
+    "serial": 102,
+    "seats": 40
+  },
+  {
+    "serial": 103,
+    "seats": 55
+  },
+  {
+    "serial": 104,
+    "seats": 48
+  },
+  {
+    "serial": 105,
+    "seats": 60
+  },
+  {
+    "serial": 106,
+    "seats": 35
+  },
+  {
+    "serial": 107,
+    "seats": 42
+  },
+  {
+    "serial": 108,
+    "seats": 38
+  },
+  {
+    "serial": 109,
+    "seats": 45
+  },
+  {
+    "serial": 110,
+    "seats": 55
+  }
+]

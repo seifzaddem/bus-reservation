@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "journeys": [
+      {
+        "id": 101,
+        "bus": {
+          "serial": 1,
+          "seats": 50
+        },
+        "departure": "Paris",
+        "arrival": "Marseille",
+        "date": "2023-12-01T08:00:00",
+        "price": "30"
+      },
+      {
+        "id": 102,
+        "bus": {
+          "serial": 2,
+          "seats": 40
+        },
+        "departure": "Lyon",
+        "arrival": "Toulouse",
+        "date": "2023-12-02T10:30:00",
+        "price": "25"
+      }
+    ],
+    "clientId": 1,
+    "seatsReserved": [
+      {
+        "journeyId": 101,
+        "seats": 2
+      },
+      {
+        "journeyId": 102,
+        "seats": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "journeys": [
+      {
+        "id": 103,
+        "bus": {
+          "serial": 3,
+          "seats": 55
+        },
+        "departure": "Nice",
+        "arrival": "Nantes",
+        "date": "2023-12-03T12:45:00",
+        "price": "35"
+      },
+      {
+        "id": 104,
+        "bus": {
+          "serial": 4,
+          "seats": 48
+        },
+        "departure": "Strasbourg",
+        "arrival": "Montpellier",
+        "date": "2023-12-04T14:15:00",
+        "price": "28"
+      }
+    ],
+    "clientId": 2,
+    "seatsReserved": [
+      {
+        "journeyId": 103,
+        "seats": 3
+      },
+      {
+        "journeyId": 104,
+        "seats": 4
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "journeys": [
+      {
+        "id": 105,
+        "bus": {
+          "serial": 5,
+          "seats": 60
+        },
+        "departure": "Bordeaux",
+        "arrival": "Lille",
+        "date": "2023-12-05T16:30:00",
+        "price": "40"
+      },
+      {
+        "id": 106,
+        "bus": {
+          "serial": 6,
+          "seats": 35
+        },
+        "departure": "Rennes",
+        "arrival": "Reims",
+        "date": "2023-12-06T18:00:00",
+        "price": "22"
+      }
+    ],
+    "clientId": 3,
+    "seatsReserved": [
+      {
+        "journeyId": 105,
+        "seats": 2
+      },
+      {
+        "journeyId": 106,
+        "seats": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "journeys": [
+      {
+        "id": 107,
+        "bus": {
+          "serial": 7,
+          "seats": 42
+        },
+        "departure": "Le Havre",
+        "arrival": "Saint-Étienne",
+        "date": "2023-12-07T20:15:00",
+        "price": "32"
+      },
+      {
+        "id": 108,
+        "bus": {
+          "serial": 8,
+          "seats": 38
+        },
+        "departure": "Toulon",
+        "arrival": "Grenoble",
+        "date": "2023-12-08T22:45:00",
+        "price": "26"
+      }
+    ],
+    "clientId": 4,
+    "seatsReserved": [
+      {
+        "journeyId": 107,
+        "seats": 3
+      },
+      {
+        "journeyId": 108,
+        "seats": 2
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "journeys": [
+      {
+        "id": 109,
+        "bus": {
+          "serial": 9,
+          "seats": 45
+        },
+        "departure": "Dijon",
+        "arrival": "Angers",
+        "date": "2023-12-09T09:30:00",
+        "price": "33"
+      },
+      {
+        "id": 110,
+        "bus": {
+          "serial": 10,
+          "seats": 55
+        },
+        "departure": "Nîmes",
+        "arrival": "Aix-en-Provence",
+        "date": "2023-12-10T11:00:00",
+        "price": "38"
+      }
+    ],
+    "clientId": 5,
+    "seatsReserved": [
+      {
+        "journeyId": 109,
+        "seats": 4
+      },
+      {
+        "journeyId": 110,
+        "seats": 1
+      }
+    ]
+  }
+]

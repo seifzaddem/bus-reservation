@@ -4,7 +4,7 @@ import {CityModel} from '../../model/city.model';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {Observable, tap} from 'rxjs';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {AddReservationModel} from '../../model/add-reservation.model';
+import {AddReservationModel} from '../../model/reservation.model';
 
 
 @UntilDestroy()
