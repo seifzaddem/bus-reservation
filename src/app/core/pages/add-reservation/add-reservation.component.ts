@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {CityService} from '../../service/city.service';
+import {Component, Input, OnInit} from '@angular/core';
 import {CityModel} from '../../model/city.model';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
-import {Observable, tap} from 'rxjs';
+import {tap} from 'rxjs';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {AddReservationModel} from '../../model/reservation.model';
 
@@ -15,21 +14,26 @@ import {AddReservationModel} from '../../model/reservation.model';
 })
 export class AddReservationComponent implements OnInit {
 
-  cities$: Observable<CityModel[]>;
-  cities: CityModel[] = [];
   departureCities: CityModel[] = [];
   arrivalCities: CityModel[] = [];
   form: FormGroup;
   numbers: number[] = [1, 2, 3, 4, 5];
-
-
   readonly DEPARTURE_FORM_KEY: keyof AddReservationModel = 'departure';
   readonly ARRIVAL_FORM_KEY: keyof AddReservationModel = 'arrival';
   readonly DATE_FORM_KEY: keyof AddReservationModel = 'date';
   readonly PASSENGER_FORM_KEY: keyof AddReservationModel = 'passenger'
 
-  constructor(private cityService: CityService,
-              private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder) {
+  }
+
+  _cities: CityModel[] = [];
+
+  @Input()
+  set cities(cities: CityModel[]) {
+    this._cities = cities;
+    this.departureCities = cities;
+    this.arrivalCities = cities;
   }
 
   ngOnInit(): void {
@@ -41,24 +45,16 @@ export class AddReservationComponent implements OnInit {
       }
     );
 
-    this.cities$ = this.cityService.getCities().pipe(
-      tap(cities => {
-        this.cities = cities;
-        this.arrivalCities = cities;
-        this.departureCities = cities;
-      })
-    );
-
     this.form.get(this.DEPARTURE_FORM_KEY).valueChanges.pipe(
       tap(departureCity => {
-        this.arrivalCities = this.cities.filter(city => city?.name != departureCity?.name);
+        this.arrivalCities = this._cities.filter(city => city?.name != departureCity?.name);
       }),
       untilDestroyed(this)
     ).subscribe();
 
     this.form.get(this.ARRIVAL_FORM_KEY).valueChanges.pipe(
       tap(arrivalCity => {
-        this.departureCities = this.cities.filter(city => city?.name != arrivalCity?.name);
+        this.departureCities = this._cities.filter(city => city?.name != arrivalCity?.name);
       }),
       untilDestroyed(this)
     ).subscribe();

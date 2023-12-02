@@ -1,0 +1,12 @@
+<div class="reservation">
+
+  <ng-container *ngIf="cities$ | async as cities else loading">
+    <app-add-reservation [cities]="cities">
+    </app-add-reservation>
+
+  </ng-container>
+</div>
+
+
+<ng-template #loading>Loading...</ng-template>
+

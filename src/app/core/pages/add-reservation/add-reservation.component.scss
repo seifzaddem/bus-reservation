@@ -5,14 +5,10 @@
   justify-content: center;
   align-items: center;
 
-  &__container {
+  &__card {
     display: flex;
-
-    &__card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    align-items: center;
+    gap: 1rem;
   }
 }
 
