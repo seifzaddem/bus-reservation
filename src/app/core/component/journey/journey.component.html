@@ -1,0 +1,11 @@
+<ng-container *ngIf="cities$ | async as cities else loading">
+  <app-search-journey (searchJourney)="searchJourney($event)" [cities]="cities">
+  </app-search-journey>
+  <ng-container *ngFor="let journey of journeys">
+    <app-search-journey-result [journey]="journey">
+    </app-search-journey-result>
+  </ng-container>
+
+</ng-container>
+
+<ng-template #loading>Loading...</ng-template>

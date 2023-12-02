@@ -1,14 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, tap} from 'rxjs';
 import {CityModel} from '../../model/city.model';
-import {CityService} from '../../service/city.service';
-import {SearchJourneyModel} from '../../model/reservation.model';
-import {JourneyService} from '../../service/journey.service';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {JourneyModel} from '../../model/journey.model';
-import {ClientModel} from '../../model/client.model';
-import {ClientService} from '../../service/client.service';
+import {CityService} from '../../service/city.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {JourneyService} from '../../service/journey.service';
+import {SearchJourneyModel} from '../../model/reservation.model';
+import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
@@ -18,19 +16,17 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class JourneyComponent implements OnInit {
 
+
   cities$: Observable<CityModel[]>;
-  client$: Observable<ClientModel>;
   journeys: JourneyModel[];
 
   constructor(private cityService: CityService,
-              private clientService: ClientService,
               private snackBar: MatSnackBar,
               private journeyService: JourneyService) {
   }
 
   ngOnInit(): void {
     this.cities$ = this.cityService.getCities();
-    this.client$ = this.clientService.getCurrentClient();
   }
 
   searchJourney(searchJourneyModel: SearchJourneyModel) {

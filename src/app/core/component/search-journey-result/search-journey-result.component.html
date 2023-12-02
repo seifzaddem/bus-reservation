@@ -19,6 +19,6 @@
 
   <div>Prix : {{_journey.price | currency : 'EUR'}}</div>
 
-  <button color="primary" mat-raised-button>Réserver</button>
+  <button (click)="addJourneyToReservations()" color="primary" mat-raised-button>Réserver</button>
 
 </div>

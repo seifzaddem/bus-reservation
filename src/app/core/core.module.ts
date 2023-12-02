@@ -11,19 +11,23 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import {JourneyComponent} from './pages/journey/journey.component';
+import {HomeComponent} from './pages/home/home.component';
 import {SearchJourneyComponent} from './component/search-journey/search-journey.component';
 import {SearchJourneyResultComponent} from './component/search-journey-result/search-journey-result.component';
-import {ReservationComponent} from './pages/reservation/reservation.component';
+import {ReservationComponent} from './component/reservation/reservation.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { JourneyComponent } from './component/journey/journey.component';
 
 
 @NgModule({
   declarations: [
-    JourneyComponent,
+    HomeComponent,
     SearchJourneyComponent,
     SearchJourneyResultComponent,
-    ReservationComponent
+    ReservationComponent,
+    JourneyComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatInputModule,
     MatDatepickerModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule,
+    MatExpansionModule
   ]
 })
 export class CoreModule {

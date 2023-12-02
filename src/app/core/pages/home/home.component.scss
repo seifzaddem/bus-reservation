@@ -1,0 +1,11 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+
+  &__panel-description {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

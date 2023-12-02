@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {JourneyModel} from '../../model/journey.model';
 import {FormControl} from '@angular/forms';
+import {JsonParserService} from '../../../shared/service/json-parser.service';
 
 @Component({
   selector: 'app-search-journey-result',
@@ -16,7 +17,7 @@ export class SearchJourneyResultComponent implements OnInit {
   availableSeats: FormControl<number>;
   price: FormControl<number>;
 
-  constructor() {
+  constructor(private jsonParserService: JsonParserService) {
   }
 
   _journey: JourneyModel;
@@ -32,5 +33,16 @@ export class SearchJourneyResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  addJourneyToReservations() {
+    // let unparsedReservations = localStorage.getItem("reservations");
+    // let reservations
+    // if (!unparsedReservations) {
+    //   localStorage.setItem("reservations", JSON.stringify([this._journey]));
+    // } else {
+    //   this.jsonParserService.parseString(unparsedReservations)
+    // }
+
   }
 }

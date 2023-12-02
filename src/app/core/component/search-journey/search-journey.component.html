@@ -1,6 +1,6 @@
 <form (ngSubmit)="search()" [formGroup]="form"
       class="add-reservation">
-  <mat-card class="add-reservation__card">
+  <div class="add-reservation__card">
     <mat-form-field appearance="outline">
       <mat-label>Départ</mat-label>
       <mat-select [formControlName]="DEPARTURE_FORM_KEY">
@@ -41,5 +41,5 @@
 
     <button [disabled]="form.invalid" color="primary" mat-raised-button type="submit">Chercher</button>
 
-  </mat-card>
+  </div>
 </form>

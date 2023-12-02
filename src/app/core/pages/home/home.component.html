@@ -1,0 +1,35 @@
+<mat-card class="home">
+  <div *ngIf="client$ | async as client">Bonjour {{client.name}}</div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Je visualise mes réservations !
+        </mat-panel-title>
+        <mat-panel-description class="home__panel-description">
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-reservation></app-reservation>
+
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Je programme mon prochain voyage !
+        </mat-panel-title>
+        <mat-panel-description class="home__panel-description">
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-journey></app-journey>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</mat-card>
+

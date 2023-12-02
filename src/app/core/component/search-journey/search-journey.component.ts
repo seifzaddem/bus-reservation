@@ -8,7 +8,7 @@ import {SearchJourneyModel} from '../../model/reservation.model';
 
 @UntilDestroy()
 @Component({
-  selector: 'app-search-reservation',
+  selector: 'app-search-journey',
   templateUrl: './search-journey.component.html',
   styleUrls: ['./search-journey.component.scss']
 })
