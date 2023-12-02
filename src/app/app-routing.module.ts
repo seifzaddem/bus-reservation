@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ReservationComponent} from './core/pages/reservation/reservation.component';
+import {JourneyComponent} from './core/pages/journey/journey.component';
 
 const routes: Routes = [
-  {path: '', component: ReservationComponent}
+  {path: '', component: JourneyComponent}
 ];
 
 @NgModule({

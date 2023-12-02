@@ -1,0 +1,10 @@
+.search-journey-result {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 1rem;
+}
+
+::ng-deep .search-journey-result .mat-form-field-wrapper {
+  padding-bottom: 0;
+}

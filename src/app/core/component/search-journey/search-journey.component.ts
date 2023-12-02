@@ -3,28 +3,28 @@ import {CityModel} from '../../model/city.model';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {tap} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {SearchReservationModel} from '../../model/reservation.model';
+import {SearchJourneyModel} from '../../model/reservation.model';
 
 
 @UntilDestroy()
 @Component({
   selector: 'app-search-reservation',
-  templateUrl: './search-reservation.component.html',
-  styleUrls: ['./search-reservation.component.scss']
+  templateUrl: './search-journey.component.html',
+  styleUrls: ['./search-journey.component.scss']
 })
-export class SearchReservationComponent implements OnInit {
+export class SearchJourneyComponent implements OnInit {
 
   departureCities: CityModel[] = [];
   arrivalCities: CityModel[] = [];
   form: FormGroup;
   seats: number[] = [1, 2, 3, 4, 5];
   currentDate = new Date();
-  readonly DEPARTURE_FORM_KEY: keyof SearchReservationModel = 'departure';
-  readonly ARRIVAL_FORM_KEY: keyof SearchReservationModel = 'arrival';
-  readonly DATE_FORM_KEY: keyof SearchReservationModel = 'date';
-  readonly SEATS_FORM_KEY: keyof SearchReservationModel = 'seats'
+  readonly DEPARTURE_FORM_KEY: keyof SearchJourneyModel = 'departure';
+  readonly ARRIVAL_FORM_KEY: keyof SearchJourneyModel = 'arrival';
+  readonly DATE_FORM_KEY: keyof SearchJourneyModel = 'date';
+  readonly SEATS_FORM_KEY: keyof SearchJourneyModel = 'seats'
   @Output()
-  searchReservation = new EventEmitter<SearchReservationModel>();
+  searchJourney = new EventEmitter<SearchJourneyModel>();
 
   constructor(
     private formBuilder: FormBuilder) {
@@ -72,6 +72,6 @@ export class SearchReservationComponent implements OnInit {
   }
 
   search() {
-    this.searchReservation.emit(this.form.value as SearchReservationModel)
+    this.searchJourney.emit(this.form.value as SearchJourneyModel)
   }
 }

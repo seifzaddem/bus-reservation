@@ -1,0 +1,24 @@
+<mat-card class="search-journey-result">
+  <mat-form-field appearance="outline">
+    <mat-label>Départ</mat-label>
+    <input [formControl]="departure" matInput readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Arrivée</mat-label>
+    <input [formControl]="arrival" matInput readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Date</mat-label>
+    <input [formControl]="date" hidden="hidden" matInput readonly>
+    {{_journey.date | date: 'medium' }}
+  </mat-form-field>
+
+  <div>Places disponibles : {{_journey.availableSeats}}</div>
+
+  <div>Prix : {{_journey.price | currency : 'EUR'}}</div>
+
+  <button color="primary" mat-raised-button>Réserver</button>
+
+</mat-card>

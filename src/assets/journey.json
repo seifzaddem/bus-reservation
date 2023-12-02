@@ -178,5 +178,41 @@
     "date": "2024-01-10T11:00:00",
     "price": 38,
     "availableSeats": 52
+  },
+  {
+    "id": 11,
+    "bus": {
+      "serial": 1,
+      "seats": 50
+    },
+    "departure": {
+      "id": 1,
+      "name": "Paris"
+    },
+    "arrival": {
+      "id": 2,
+      "name": "Marseille"
+    },
+    "date": "2024-01-11T08:00:00",
+    "price": 30,
+    "availableSeats": 1
+  },
+  {
+    "id": 12,
+    "bus": {
+      "serial": 2,
+      "seats": 40
+    },
+    "departure": {
+      "id": 3,
+      "name": "Paris"
+    },
+    "arrival": {
+      "id": 4,
+      "name": "Marseille"
+    },
+    "date": "2024-01-01T10:30:00",
+    "price": 25,
+    "availableSeats": 39
   }
 ]

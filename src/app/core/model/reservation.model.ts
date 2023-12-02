@@ -13,7 +13,7 @@ export interface SeatsReserved {
   seats: number;
 }
 
-export interface SearchReservationModel {
+export interface SearchJourneyModel {
   departure: CityModel;
   arrival: CityModel;
   seats: number;
