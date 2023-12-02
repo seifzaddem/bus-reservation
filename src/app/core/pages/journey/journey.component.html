@@ -1,5 +1,6 @@
-<div class="journey">
-
+<mat-card class="journey">
+  <div *ngIf="client$ | async as client">Bonjour {{client.name}}</div>
+  <div>Veuillez choisir votre prochain voyage !</div>
   <ng-container *ngIf="cities$ | async as cities else loading">
     <app-search-reservation (searchJourney)="searchJourney($event)" [cities]="cities">
     </app-search-reservation>
@@ -9,7 +10,7 @@
     </ng-container>
 
   </ng-container>
-</div>
+</mat-card>
 
 
 <ng-template #loading>Loading...</ng-template>

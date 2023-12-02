@@ -14,13 +14,16 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {JourneyComponent} from './pages/journey/journey.component';
 import {SearchJourneyComponent} from './component/search-journey/search-journey.component';
 import {SearchJourneyResultComponent} from './component/search-journey-result/search-journey-result.component';
+import {ReservationComponent} from './pages/reservation/reservation.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
   declarations: [
     JourneyComponent,
     SearchJourneyComponent,
-    SearchJourneyResultComponent
+    SearchJourneyResultComponent,
+    ReservationComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +34,7 @@ import {SearchJourneyResultComponent} from './component/search-journey-result/se
     MatSelectModule,
     ReactiveFormsModule,
     MatNativeDateModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
