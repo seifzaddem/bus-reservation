@@ -20,6 +20,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {JourneyComponent} from './component/journey/journey.component';
 import {UnpaidReservationComponent} from './component/unpaid-reservation/unpaid-reservation.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {UnpaidReservationComponent} from './component/unpaid-reservation/unpaid-
     MatDatepickerModule,
     FormsModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ]
 })
 export class CoreModule {

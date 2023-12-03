@@ -17,6 +17,7 @@ export class UnpaidReservationComponent implements OnInit {
   unpaidReservations$ = new Subject<void>();
   @Input()
   client: ClientModel;
+  displayedColumns = ["departure", "arrival", "date", "pricePerSeat", "seats", "totalPrice"];
 
   constructor(private reservationService: ReservationService) {
   }
