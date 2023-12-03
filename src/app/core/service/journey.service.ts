@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {JourneyModel, ReservedJourneyModel} from '../model/journey.model';
 import {SearchJourneyModel} from '../model/reservation.model';
 import {JsonParserService} from '../../shared/service/json-parser.service';
@@ -11,6 +11,7 @@ import {haveSameDay} from '../../shared/util/date.util';
 })
 export class JourneyService {
 
+  public journeyNotification$ = new Subject<void>();
   private apiUrl = 'assets/journey.json';
 
   constructor(private http: HttpClient,
@@ -40,4 +41,13 @@ export class JourneyService {
     localStorage.setItem("journeys", JSON.stringify(journeys));
     return of(null);
   }
+
+  notifyJourney(): void {
+    this.journeyNotification$.next();
+  }
+
+  getJourneyNotification(): Observable<void> {
+    return this.journeyNotification$.asObservable();
+  }
+
 }

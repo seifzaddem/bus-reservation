@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {JourneyModel, ReservedJourneyModel} from '../../model/journey.model';
 import {FormControl} from '@angular/forms';
 import {ClientModel} from '../../model/client.model';
+import {v4 as uuid} from 'uuid';
 
 @Component({
   selector: 'app-search-journey-result',
@@ -45,6 +46,7 @@ export class SearchJourneyResultComponent implements OnInit {
 
   triggerReservation() {
     this.reserveJourney.emit({
+      id: uuid(),
       journey: this._journey,
       seats: this.seats,
       clientId: this.client.id

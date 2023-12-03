@@ -1,6 +1,6 @@
-<div *ngIf="reservation;else noReservations" class="unpaid-reservation">
+<div class="unpaid-reservation">
   <div>Voici vos réservation en cours</div>
-  <table [dataSource]="reservation.reservedJourneys" class="unpaid-reservation__table" mat-table>
+  <table [dataSource]="reservation?.reservedJourneys" class="unpaid-reservation__table" mat-table>
 
     <ng-container matColumnDef="departure">
       <th *matHeaderCellDef mat-header-cell>Départ</th>
@@ -32,11 +32,16 @@
       <td *matCellDef="let element" mat-cell> {{element.journey.price * element.seats | currency : 'EUR'}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="delete">
+      <th *matHeaderCellDef mat-header-cell></th>
+      <td *matCellDef="let element" mat-cell>
+        <button (click)="deleteJourney(element)" mat-icon-button type="button">
+          <mat-icon color="primary">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
 </div>
-
-<ng-template #noReservations>
-  <div>Aucune réservation en cours</div>
-</ng-template>

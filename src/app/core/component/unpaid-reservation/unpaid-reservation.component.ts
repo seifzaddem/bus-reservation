@@ -4,6 +4,8 @@ import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {ReservationModel} from '../../model/reservation.model';
 import {ClientModel} from '../../model/client.model';
 import {catchError, EMPTY, Subject, switchMap, tap} from 'rxjs';
+import {ReservedJourneyModel} from '../../model/journey.model';
+import {JourneyService} from '../../service/journey.service';
 
 @UntilDestroy()
 @Component({
@@ -17,9 +19,10 @@ export class UnpaidReservationComponent implements OnInit {
   unpaidReservations$ = new Subject<void>();
   @Input()
   client: ClientModel;
-  displayedColumns = ["departure", "arrival", "date", "pricePerSeat", "seats", "totalPrice"];
+  displayedColumns = ["departure", "arrival", "date", "pricePerSeat", "seats", "totalPrice", "delete"];
 
-  constructor(private reservationService: ReservationService) {
+  constructor(private reservationService: ReservationService,
+              private journeyService: JourneyService) {
   }
 
   ngOnInit(): void {
@@ -45,6 +48,16 @@ export class UnpaidReservationComponent implements OnInit {
       untilDestroyed(this)
     ).subscribe();
 
+  }
+
+  deleteJourney(reservedJourneyModel: ReservedJourneyModel) {
+    this.reservationService.deleteReservation(reservedJourneyModel).pipe(
+      tap(() => {
+        this.unpaidReservations$.next();
+        this.journeyService.notifyJourney();
+      }),
+      untilDestroyed(this)
+    ).subscribe();
   }
 
 }

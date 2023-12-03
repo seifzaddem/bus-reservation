@@ -12,6 +12,7 @@ export interface JourneyModel {
 }
 
 export interface ReservedJourneyModel {
+  id: string;
   journey: JourneyModel;
   clientId: number;
   seats: number;

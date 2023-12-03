@@ -65,6 +65,14 @@ export class JourneyComponent implements OnInit {
       })
     ).subscribe();
 
+    this.journeyService.getJourneyNotification().pipe(
+      tap(() => this.searchJourney$.next()),
+      untilDestroyed(this),
+      catchError(() => {
+        return EMPTY;
+      })
+    ).subscribe();
+
   }
 
   searchJourney(searchJourneyModel: SearchJourneyModel) {
@@ -75,7 +83,7 @@ export class JourneyComponent implements OnInit {
   reserveJourney(reservedJourneyModel: ReservedJourneyModel) {
     this.updateJourney$.next(reservedJourneyModel);
 
-    this.reservationService.addReservation(reservedJourneyModel, this.client.id).pipe(
+    this.reservationService.addReservation(reservedJourneyModel).pipe(
       tap(() => this.reservationService.notifyUnpaidReservations()),
       untilDestroyed(this)
     ).subscribe();
