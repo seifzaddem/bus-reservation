@@ -18,7 +18,8 @@ import {ReservationComponent} from './component/reservation/reservation.componen
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { JourneyComponent } from './component/journey/journey.component';
+import {JourneyComponent} from './component/journey/journey.component';
+import {UnpaidReservationComponent} from './component/unpaid-reservation/unpaid-reservation.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { JourneyComponent } from './component/journey/journey.component';
     SearchJourneyComponent,
     SearchJourneyResultComponent,
     ReservationComponent,
-    JourneyComponent
+    JourneyComponent,
+    UnpaidReservationComponent
   ],
   imports: [
     CommonModule,

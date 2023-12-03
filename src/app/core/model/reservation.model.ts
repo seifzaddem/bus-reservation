@@ -6,6 +6,7 @@ export interface ReservationModel {
   journeys: JourneyModel[];
   clientId: number;
   seatsReserved: SeatsReserved[];
+  status: Status;
 }
 
 export interface SeatsReserved {
@@ -19,3 +20,5 @@ export interface SearchJourneyModel {
   seats: number;
   date: Date;
 }
+
+export type Status = 'PAID' | 'UNPAID';

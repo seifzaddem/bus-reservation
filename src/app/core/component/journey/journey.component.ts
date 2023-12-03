@@ -8,6 +8,7 @@ import {JourneyService} from '../../service/journey.service';
 import {SearchJourneyModel} from '../../model/reservation.model';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {ClientModel} from '../../model/client.model';
+import {ReservationService} from '../../service/reservation.service';
 
 @UntilDestroy()
 @Component({
@@ -30,6 +31,7 @@ export class JourneyComponent implements OnInit {
 
   constructor(private cityService: CityService,
               private snackBar: MatSnackBar,
+              private reservationService: ReservationService,
               private journeyService: JourneyService) {
   }
 
@@ -57,6 +59,7 @@ export class JourneyComponent implements OnInit {
     this.updateJourney$.pipe(
       switchMap(reservedJourneyModel => this.journeyService.updateJourney(reservedJourneyModel)),
       tap(() => this.searchJourney$.next()),
+      untilDestroyed(this),
       catchError(() => {
         return EMPTY;
       })
@@ -71,6 +74,11 @@ export class JourneyComponent implements OnInit {
 
   reserveJourney(reservedJourneyModel: ReservedJourneyModel) {
     this.updateJourney$.next(reservedJourneyModel);
+
+    this.reservationService.addReservation(reservedJourneyModel, this.client.id).pipe(
+      tap(() => this.reservationService.notifyUnpaidReservations()),
+      untilDestroyed(this)
+    ).subscribe();
   }
 
 }
