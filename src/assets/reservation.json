@@ -1,51 +1,12 @@
 [
   {
-    "id": "1",
-    "journeys": [
-      {
-        "id": 101,
-        "bus": {
-          "serial": 1,
-          "seats": 50
-        },
-        "departure": {
-          "id": 1,
-          "name": "Paris"
-        },
-        "arrival": {
-          "id": 2,
-          "name": "Marseille"
-        },
-        "date": "2024-01-01T08:00:00",
-        "price": 30,
-        "availableSeats": 48
-      },
-      {
-        "id": 102,
-        "bus": {
-          "serial": 2,
-          "seats": 40
-        },
-        "departure": {
-          "id": 3,
-          "name": "Lyon"
-        },
-        "arrival": {
-          "id": 4,
-          "name": "Toulouse"
-        },
-        "date": "2024-01-02T10:30:00",
-        "price": 25,
-        "availableSeats": 39
-      }
-    ],
-    "clientId": 1,
-    "seatsReserved": [
+    "id": "abc123",
+    "reservedJourneys": [
       {
         "journey": {
-          "id": 101,
+          "id": 1,
           "bus": {
-            "serial": 1,
+            "serial": 101,
             "seats": 50
           },
           "departure": {
@@ -56,17 +17,18 @@
             "id": 2,
             "name": "Marseille"
           },
-          "date": "2024-01-01T08:00:00",
-          "price": 30,
+          "date": "2023-12-01T08:00:00",
+          "price": "30.00",
           "availableSeats": 48
         },
+        "clientId": 1,
         "seats": 2
       },
       {
         "journey": {
-          "id": 102,
+          "id": 2,
           "bus": {
-            "serial": 2,
+            "serial": 102,
             "seats": 40
           },
           "departure": {
@@ -77,62 +39,25 @@
             "id": 4,
             "name": "Toulouse"
           },
-          "date": "2024-01-02T10:30:00",
-          "price": 25,
+          "date": "2023-12-02T10:30:00",
+          "price": "25.00",
           "availableSeats": 39
         },
+        "clientId": 1,
         "seats": 1
       }
     ],
+    "clientId": 1,
     "status": "PAID"
   },
   {
-    "id": "2",
-    "journeys": [
-      {
-        "id": 103,
-        "bus": {
-          "serial": 3,
-          "seats": 55
-        },
-        "departure": {
-          "id": 5,
-          "name": "Nice"
-        },
-        "arrival": {
-          "id": 6,
-          "name": "Nantes"
-        },
-        "date": "2024-01-03T12:45:00",
-        "price": 35,
-        "availableSeats": 53
-      },
-      {
-        "id": 104,
-        "bus": {
-          "serial": 4,
-          "seats": 48
-        },
-        "departure": {
-          "id": 7,
-          "name": "Strasbourg"
-        },
-        "arrival": {
-          "id": 8,
-          "name": "Montpellier"
-        },
-        "date": "2024-01-04T14:15:00",
-        "price": 28,
-        "availableSeats": 46
-      }
-    ],
-    "clientId": 2,
-    "seatsReserved": [
+    "id": "def456",
+    "reservedJourneys": [
       {
         "journey": {
-          "id": 103,
+          "id": 3,
           "bus": {
-            "serial": 3,
+            "serial": 103,
             "seats": 55
           },
           "departure": {
@@ -143,17 +68,18 @@
             "id": 6,
             "name": "Nantes"
           },
-          "date": "2024-01-03T12:45:00",
-          "price": 35,
+          "date": "2023-12-03T12:45:00",
+          "price": "35.00",
           "availableSeats": 53
         },
+        "clientId": 2,
         "seats": 3
       },
       {
         "journey": {
-          "id": 104,
+          "id": 4,
           "bus": {
-            "serial": 4,
+            "serial": 104,
             "seats": 48
           },
           "departure": {
@@ -164,62 +90,25 @@
             "id": 8,
             "name": "Montpellier"
           },
-          "date": "2024-01-04T14:15:00",
-          "price": 28,
+          "date": "2023-12-04T14:15:00",
+          "price": "28.00",
           "availableSeats": 46
         },
+        "clientId": 2,
         "seats": 4
       }
     ],
+    "clientId": 2,
     "status": "PAID"
   },
   {
-    "id": "3",
-    "journeys": [
-      {
-        "id": 105,
-        "bus": {
-          "serial": 5,
-          "seats": 60
-        },
-        "departure": {
-          "id": 9,
-          "name": "Bordeaux"
-        },
-        "arrival": {
-          "id": 10,
-          "name": "Lille"
-        },
-        "date": "2024-01-05T16:30:00",
-        "price": 40,
-        "availableSeats": 58
-      },
-      {
-        "id": 106,
-        "bus": {
-          "serial": 6,
-          "seats": 35
-        },
-        "departure": {
-          "id": 11,
-          "name": "Rennes"
-        },
-        "arrival": {
-          "id": 12,
-          "name": "Reims"
-        },
-        "date": "2024-01-06T18:00:00",
-        "price": 22,
-        "availableSeats": 33
-      }
-    ],
-    "clientId": 3,
-    "seatsReserved": [
+    "id": "ghi789",
+    "reservedJourneys": [
       {
         "journey": {
-          "id": 105,
+          "id": 5,
           "bus": {
-            "serial": 5,
+            "serial": 105,
             "seats": 60
           },
           "departure": {
@@ -230,17 +119,18 @@
             "id": 10,
             "name": "Lille"
           },
-          "date": "2024-01-05T16:30:00",
-          "price": 40,
+          "date": "2023-12-05T16:30:00",
+          "price": "40.00",
           "availableSeats": 58
         },
+        "clientId": 3,
         "seats": 2
       },
       {
         "journey": {
-          "id": 106,
+          "id": 6,
           "bus": {
-            "serial": 6,
+            "serial": 106,
             "seats": 35
           },
           "departure": {
@@ -251,62 +141,25 @@
             "id": 12,
             "name": "Reims"
           },
-          "date": "2024-01-06T18:00:00",
-          "price": 22,
+          "date": "2023-12-06T18:00:00",
+          "price": "22.00",
           "availableSeats": 33
         },
+        "clientId": 3,
         "seats": 1
       }
     ],
+    "clientId": 3,
     "status": "PAID"
   },
   {
-    "id": "4",
-    "journeys": [
-      {
-        "id": 107,
-        "bus": {
-          "serial": 7,
-          "seats": 42
-        },
-        "departure": {
-          "id": 13,
-          "name": "Le Havre"
-        },
-        "arrival": {
-          "id": 14,
-          "name": "Saint-Étienne"
-        },
-        "date": "2024-01-07T20:15:00",
-        "price": 32,
-        "availableSeats": 40
-      },
-      {
-        "id": 108,
-        "bus": {
-          "serial": 8,
-          "seats": 38
-        },
-        "departure": {
-          "id": 15,
-          "name": "Toulon"
-        },
-        "arrival": {
-          "id": 16,
-          "name": "Grenoble"
-        },
-        "date": "2024-01-08T22:45:00",
-        "price": 26,
-        "availableSeats": 36
-      }
-    ],
-    "clientId": 4,
-    "seatsReserved": [
+    "id": "jkl012",
+    "reservedJourneys": [
       {
         "journey": {
-          "id": 107,
+          "id": 7,
           "bus": {
-            "serial": 7,
+            "serial": 107,
             "seats": 42
           },
           "departure": {
@@ -317,17 +170,18 @@
             "id": 14,
             "name": "Saint-Étienne"
           },
-          "date": "2024-01-07T20:15:00",
-          "price": 32,
+          "date": "2023-12-07T20:15:00",
+          "price": "32.00",
           "availableSeats": 40
         },
+        "clientId": 4,
         "seats": 3
       },
       {
         "journey": {
-          "id": 108,
+          "id": 8,
           "bus": {
-            "serial": 8,
+            "serial": 108,
             "seats": 38
           },
           "departure": {
@@ -338,62 +192,25 @@
             "id": 16,
             "name": "Grenoble"
           },
-          "date": "2024-01-08T22:45:00",
-          "price": 26,
+          "date": "2023-12-08T22:45:00",
+          "price": "26.00",
           "availableSeats": 36
         },
+        "clientId": 4,
         "seats": 2
       }
     ],
+    "clientId": 4,
     "status": "PAID"
   },
   {
-    "id": "5",
-    "journeys": [
-      {
-        "id": 109,
-        "bus": {
-          "serial": 9,
-          "seats": 45
-        },
-        "departure": {
-          "id": 17,
-          "name": "Dijon"
-        },
-        "arrival": {
-          "id": 18,
-          "name": "Angers"
-        },
-        "date": "2024-01-09T09:30:00",
-        "price": 33,
-        "availableSeats": 42
-      },
-      {
-        "id": 110,
-        "bus": {
-          "serial": 10,
-          "seats": 55
-        },
-        "departure": {
-          "id": 19,
-          "name": "Nîmes"
-        },
-        "arrival": {
-          "id": 20,
-          "name": "Aix-en-Provence"
-        },
-        "date": "2024-01-10T11:00:00",
-        "price": 38,
-        "availableSeats": 51
-      }
-    ],
-    "clientId": 5,
-    "seatsReserved": [
+    "id": "mno345",
+    "reservedJourneys": [
       {
         "journey": {
-          "id": 109,
+          "id": 9,
           "bus": {
-            "serial": 9,
+            "serial": 109,
             "seats": 45
           },
           "departure": {
@@ -404,17 +221,18 @@
             "id": 18,
             "name": "Angers"
           },
-          "date": "2024-01-09T09:30:00",
-          "price": 33,
+          "date": "2023-12-09T09:30:00",
+          "price": "33.00",
           "availableSeats": 42
         },
+        "clientId": 5,
         "seats": 4
       },
       {
         "journey": {
-          "id": 110,
+          "id": 10,
           "bus": {
-            "serial": 10,
+            "serial": 110,
             "seats": 55
           },
           "departure": {
@@ -425,13 +243,15 @@
             "id": 20,
             "name": "Aix-en-Provence"
           },
-          "date": "2024-01-10T11:00:00",
-          "price": 38,
+          "date": "2023-12-10T11:00:00",
+          "price": "38.00",
           "availableSeats": 51
         },
+        "clientId": 5,
         "seats": 1
       }
     ],
+    "clientId": 5,
     "status": "PAID"
   }
 ]

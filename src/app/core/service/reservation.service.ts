@@ -30,21 +30,13 @@ export class ReservationService {
     if (!currentReservation) {
       currentReservation = {
         id: uuid(),
-        journeys: [reservedJourneyModel.journey],
         clientId: clientId,
-        seatsReserved: [{
-          journey: reservedJourneyModel.journey,
-          seats: reservedJourneyModel.seats
-        }],
+        reservedJourneys: [reservedJourneyModel],
         status: 'UNPAID'
       };
       reservations.push(currentReservation);
     } else {
-      currentReservation.journeys.push(reservedJourneyModel.journey);
-      currentReservation.seatsReserved.push({
-        journey: reservedJourneyModel.journey,
-        seats: reservedJourneyModel.seats
-      });
+      currentReservation.reservedJourneys.push(reservedJourneyModel);
     }
     localStorage.setItem("reservations", JSON.stringify(reservations));
 

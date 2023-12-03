@@ -1,1 +1,13 @@
-<p>pending-reservation works!</p>
+<div *ngIf="reservation;else noReservations" class="unpaid-reservation">
+  <div>Voici vos réservation en cours</div>
+  <!--  <div *ngFor="let journey of reservation.journeys">-->
+  <!--    <div>Départ : {{journey.departure}}</div>-->
+  <!--    <div>Arrivée : {{journey.arrival}}</div>-->
+  <!--    <div>Date : {{journey.date}}</div>-->
+  <!--    <div>Prix : </div>-->
+  <!--  </div>-->
+</div>
+
+<ng-template #noReservations>
+  <div>Aucune réservation en cours</div>
+</ng-template>

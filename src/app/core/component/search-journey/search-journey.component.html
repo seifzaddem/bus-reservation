@@ -33,8 +33,8 @@
     <mat-form-field appearance="outline">
       <mat-label>Passagers</mat-label>
       <mat-select [formControlName]="SEATS_FORM_KEY">
-        <mat-option *ngFor="let number of seats" [value]="number">
-          {{ number }}
+        <mat-option *ngFor="let seat of seats" [value]="seat">
+          {{ seat }}
         </mat-option>
       </mat-select>
     </mat-form-field>
