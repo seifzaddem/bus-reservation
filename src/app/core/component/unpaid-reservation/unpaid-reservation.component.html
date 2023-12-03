@@ -46,4 +46,19 @@
   </table>
 
   <div *ngIf="reservation">Prix total : {{calculateTotalPrice() | currency : 'EUR'}}</div>
+
+  <div>
+    <button (click)="openCreditCardPaymentModal()" [disabled]="!areJourneysReserved()" color="primary"
+            mat-raised-button>Payer par
+      carte
+    </button>
+  </div>
+
+  <div>
+    <button (click)="openPaypalPaymentModal()" [disabled]="!areJourneysReserved()" color="primary" mat-raised-button>
+      Payer par
+      paypal
+    </button>
+  </div>
+
 </div>

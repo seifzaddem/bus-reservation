@@ -6,6 +6,7 @@ export interface ReservationModel {
   reservedJourneys: ReservedJourneyModel[];
   clientId: number;
   status: Status;
+  totalPrice?: number;
 }
 
 export interface SearchJourneyModel {
@@ -13,6 +14,10 @@ export interface SearchJourneyModel {
   arrival: CityModel;
   seats: number;
   date: Date;
+}
+
+export interface ReservationModelModalWrapper {
+  reservationModel: ReservationModel
 }
 
 export type Status = 'PAID' | 'UNPAID';

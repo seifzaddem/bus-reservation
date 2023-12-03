@@ -23,7 +23,7 @@ export class ReservationService {
     return this.http.get<ReservationModel[]>(this.apiUrl);
   }
 
-  addReservation(reservedJourneyModel: ReservedJourneyModel): Observable<void> {
+  addReservedJourney(reservedJourneyModel: ReservedJourneyModel): Observable<void> {
     let unparsedReservations = localStorage.getItem("reservations");
     const reservations: ReservationModel[] = this.jsonParserService.parseString(unparsedReservations);
     let currentReservation = reservations.find(reservationModel =>
@@ -44,7 +44,16 @@ export class ReservationService {
     return of(null);
   }
 
-  deleteReservation(reservedJourneyModel: ReservedJourneyModel): Observable<void> {
+  updateReservation(reservationModel: ReservationModel): Observable<void> {
+    let unparsedReservations = localStorage.getItem("reservations");
+    let reservations: ReservationModel[] = this.jsonParserService.parseString(unparsedReservations);
+    reservations = reservations.filter(reservation => reservation.id != reservationModel.id);
+    reservations.push(reservationModel);
+    localStorage.setItem("reservations", JSON.stringify(reservations));
+    return of(null);
+  }
+
+  deleteReservedJourney(reservedJourneyModel: ReservedJourneyModel): Observable<void> {
     let unparsedReservations = localStorage.getItem("reservations");
     const reservations: ReservationModel[] = this.jsonParserService.parseString(unparsedReservations);
     let currentReservation = reservations.find(reservationModel =>

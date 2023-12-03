@@ -21,6 +21,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {JourneyComponent} from './component/journey/journey.component';
 import {UnpaidReservationComponent} from './component/unpaid-reservation/unpaid-reservation.component';
 import {MatTableModule} from '@angular/material/table';
+import {
+  CreditCardPaymentModalComponent
+} from './component/credit-card-payment-modal/credit-card-payment-modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -30,7 +34,8 @@ import {MatTableModule} from '@angular/material/table';
     SearchJourneyResultComponent,
     ReservationComponent,
     JourneyComponent,
-    UnpaidReservationComponent
+    UnpaidReservationComponent,
+    CreditCardPaymentModalComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +54,8 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     MatTabsModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ]
 })
 export class CoreModule {

@@ -83,7 +83,7 @@ export class JourneyComponent implements OnInit {
   reserveJourney(reservedJourneyModel: ReservedJourneyModel) {
     this.updateJourney$.next(reservedJourneyModel);
 
-    this.reservationService.addReservation(reservedJourneyModel).pipe(
+    this.reservationService.addReservedJourney(reservedJourneyModel).pipe(
       tap(() => this.reservationService.notifyUnpaidReservations()),
       untilDestroyed(this)
     ).subscribe();
