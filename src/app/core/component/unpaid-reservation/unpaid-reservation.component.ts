@@ -60,4 +60,11 @@ export class UnpaidReservationComponent implements OnInit {
     ).subscribe();
   }
 
+  calculateTotalPrice(): number {
+
+    return this.reservation ? this.reservation?.reservedJourneys.reduce((total, reservedJourney) => {
+      total += reservedJourney.journey.price * reservedJourney.seats;
+      return total;
+    }, 0) : 0;
+  }
 }

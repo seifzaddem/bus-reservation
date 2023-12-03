@@ -44,4 +44,6 @@
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
+
+  <div *ngIf="reservation">Prix total : {{calculateTotalPrice() | currency : 'EUR'}}</div>
 </div>
