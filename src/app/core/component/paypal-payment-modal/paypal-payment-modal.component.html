@@ -1,0 +1,18 @@
+<div class="paypal-payment-modal">
+
+  <div>Le prix total est de {{data.reservationModel.totalPrice | currency : 'EUR'}}</div>
+  <div>Une réduction de 5% a été appliquée pour le paiement paypal</div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Mail</mat-label>
+      <input [formControl]="mailControl" matInput>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button (click)="executePayment()" [disabled]="mailControl.invalid" color="primary" mat-raised-button>Payer par
+      paypal
+    </button>
+  </div>
+</div>

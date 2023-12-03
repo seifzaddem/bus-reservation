@@ -10,6 +10,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {CreditCardPaymentModalComponent} from '../credit-card-payment-modal/credit-card-payment-modal.component';
 import {BillService} from '../../service/bill.service';
 import {BillModel} from '../../model/bill.model';
+import {PaypalPaymentModalComponent} from '../paypal-payment-modal/paypal-payment-modal.component';
 
 @UntilDestroy()
 @Component({
@@ -114,8 +115,31 @@ export class UnpaidReservationComponent implements OnInit {
   }
 
   openPaypalPaymentModal() {
-
+    this.matDialog.open(PaypalPaymentModalComponent, {
+      width: '50%',
+      height: '50%',
+      data: {
+        reservationModel: {
+          ...this.reservation,
+          totalPrice: this.reservation.totalPrice - (this.reservation.totalPrice * 0.05)
+        }
+      }
+    }).afterClosed().pipe(
+      tap(value => {
+        if (value) {
+          this.reservation.status = 'PAID';
+          this.reservation.totalPrice -= (this.reservation.totalPrice * 0.05);
+          this.createBill$.next({
+            reservation: this.reservation,
+            paymentMethod: 'PAYPAL'
+          });
+          this.updateReservation$.next();
+        }
+      }),
+      untilDestroyed(this)
+    ).subscribe();
   }
+
 
   areJourneysReserved(): boolean {
     return this.reservation?.reservedJourneys != undefined && this.reservation.reservedJourneys.length != 0;

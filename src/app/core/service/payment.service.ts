@@ -14,4 +14,9 @@ export class PaymentService {
     // Payment by card logic
     return of(null);
   }
+
+  payByPaypal(mail: string): Observable<any> {
+    // Payment by PayPal logic
+    return of(null);
+  }
 }
