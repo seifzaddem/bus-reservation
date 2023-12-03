@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {JourneyModel} from '../../model/journey.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {JourneyModel, ReservedJourneyModel} from '../../model/journey.model';
 import {FormControl} from '@angular/forms';
-import {JsonParserService} from '../../../shared/service/json-parser.service';
+import {ClientModel} from '../../model/client.model';
 
 @Component({
   selector: 'app-search-journey-result',
@@ -16,8 +16,16 @@ export class SearchJourneyResultComponent implements OnInit {
   date: FormControl<Date>;
   availableSeats: FormControl<number>;
   price: FormControl<number>;
+  @Input()
+  seats: number;
 
-  constructor(private jsonParserService: JsonParserService) {
+  @Input()
+  client: ClientModel;
+
+  @Output()
+  reserveJourney = new EventEmitter<ReservedJourneyModel>();
+
+  constructor() {
   }
 
   _journey: JourneyModel;
@@ -35,14 +43,12 @@ export class SearchJourneyResultComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addJourneyToReservations() {
-    // let unparsedReservations = localStorage.getItem("reservations");
-    // let reservations
-    // if (!unparsedReservations) {
-    //   localStorage.setItem("reservations", JSON.stringify([this._journey]));
-    // } else {
-    //   this.jsonParserService.parseString(unparsedReservations)
-    // }
+  triggerReservation() {
+    this.reserveJourney.emit({
+      journey: this._journey,
+      seats: this.seats,
+      clientId: this.client.id
+    });
 
   }
 }

@@ -17,8 +17,8 @@
 
   <div>Places disponibles : {{_journey.availableSeats}}</div>
 
-  <div>Prix : {{_journey.price | currency : 'EUR'}}</div>
+  <div>Prix : {{_journey.price * seats | currency : 'EUR'}}</div>
 
-  <button (click)="addJourneyToReservations()" color="primary" mat-raised-button>Réserver</button>
+  <button (click)="triggerReservation()" color="primary" mat-raised-button>Réserver</button>
 
 </div>

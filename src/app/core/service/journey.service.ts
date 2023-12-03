@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {JourneyModel} from '../model/journey.model';
+import {JourneyModel, ReservedJourneyModel} from '../model/journey.model';
 import {SearchJourneyModel} from '../model/reservation.model';
 import {JsonParserService} from '../../shared/service/json-parser.service';
 import {haveSameDay} from '../../shared/util/date.util';
@@ -30,5 +30,14 @@ export class JourneyService {
       && haveSameDay(new Date(journeyModel.date), searchReservationModel.date)
       && journeyModel.availableSeats >= searchReservationModel.seats);
     return of(journeys);
+  }
+
+  updateJourney(reservedJourneyModel: ReservedJourneyModel): Observable<void> {
+    let unparsedJourneys = localStorage.getItem("journeys");
+    const journeys: JourneyModel[] = this.jsonParserService.parseString(unparsedJourneys);
+    const correspondingJourney = journeys.find(journey => reservedJourneyModel.journey.id == journey.id);
+    correspondingJourney.availableSeats -= reservedJourneyModel.seats;
+    localStorage.setItem("journeys", JSON.stringify(journeys));
+    return of(null);
   }
 }

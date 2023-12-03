@@ -2,7 +2,8 @@
   <app-search-journey (searchJourney)="searchJourney($event)" [cities]="cities">
   </app-search-journey>
   <ng-container *ngFor="let journey of journeys">
-    <app-search-journey-result [journey]="journey">
+    <app-search-journey-result (reserveJourney)="reserveJourney($event)" [client]="client"
+                               [journey]="journey" [seats]="seats">
     </app-search-journey-result>
   </ng-container>
 

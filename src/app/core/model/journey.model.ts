@@ -10,3 +10,9 @@ export interface JourneyModel {
   price: number;
   availableSeats: number;
 }
+
+export interface ReservedJourneyModel {
+  journey: JourneyModel;
+  clientId: number;
+  seats: number;
+}

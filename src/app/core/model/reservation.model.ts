@@ -2,7 +2,7 @@ import {JourneyModel} from './journey.model';
 import {CityModel} from './city.model';
 
 export interface ReservationModel {
-  id: number;
+  id: string;
   journeys: JourneyModel[];
   clientId: number;
   seatsReserved: SeatsReserved[];
