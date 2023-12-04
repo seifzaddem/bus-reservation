@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {BillModel} from '../../model/bill.model';
 
 @Component({
@@ -6,16 +6,13 @@ import {BillModel} from '../../model/bill.model';
   templateUrl: './paid-reservation.component.html',
   styleUrls: ['./paid-reservation.component.scss']
 })
-export class PaidReservationComponent implements OnInit {
+export class PaidReservationComponent {
 
   @Input()
   bills: BillModel[];
   displayedColumns = ["id", "totalPrice", "paymentMethod"];
 
   constructor() {
-  }
-
-  ngOnInit(): void {
   }
 
 }
