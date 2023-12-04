@@ -1,6 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { JourneyComponent } from './journey.component';
+import {JourneyComponent} from './journey.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 describe('JourneyComponent', () => {
   let component: JourneyComponent;
@@ -8,9 +10,11 @@ describe('JourneyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JourneyComponent ]
+      declarations: [JourneyComponent],
+      imports: [HttpClientTestingModule,
+        MatSnackBarModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(JourneyComponent);
     component = fixture.componentInstance;

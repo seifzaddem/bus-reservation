@@ -23,9 +23,11 @@ export class ReservationComponent implements OnInit {
   @Input()
   client: ClientModel;
   public reservation: ReservationModel;
+  public bills: BillModel[];
   createBill$ = new Subject<BillModel>();
+  loadBills$ = new Subject<void>();
   updateReservation$ = new Subject<void>();
-  reloadUnpaidReservations$ = new Subject<void>();
+  loadUnpaidReservations$ = new Subject<void>();
 
   constructor(private reservationService: ReservationService,
               private billService: BillService,
@@ -34,16 +36,25 @@ export class ReservationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.loadBills$.pipe(
+      switchMap(() => this.billService.getBillsByClient(this.client)),
+      tap(bills => this.bills = bills),
+      untilDestroyed(this)
+    ).subscribe();
+
+    this.loadBills$.next();
+
     this.updateReservation$.pipe(
       switchMap(() => this.reservationService.updateReservation(this.reservation)),
-      tap(() => this.reloadUnpaidReservations$.next()),
+      tap(() => this.loadUnpaidReservations$.next()),
       catchError(() => {
         return EMPTY;
       }),
       untilDestroyed(this)
     ).subscribe();
 
-    this.reloadUnpaidReservations$.pipe(
+    this.loadUnpaidReservations$.pipe(
       switchMap(() => this.reservationService.getReservationsByStatus('UNPAID', this.client.id)),
       tap(reservations => {
         // We get the first element as we consider that there is only one unpaid reservation and each journey adds up to the current reservation
@@ -60,10 +71,10 @@ export class ReservationComponent implements OnInit {
       untilDestroyed(this)
     ).subscribe();
 
-    this.reloadUnpaidReservations$.next();
+    this.loadUnpaidReservations$.next();
 
     this.reservationService.getUnpaidReservationsNotification().pipe(
-      tap(() => this.reloadUnpaidReservations$.next()),
+      tap(() => this.loadUnpaidReservations$.next()),
       untilDestroyed(this)
     ).subscribe();
 
@@ -87,6 +98,7 @@ export class ReservationComponent implements OnInit {
             reservation: this.reservation,
             paymentMethod: 'CARD'
           });
+          this.loadBills$.next();
           this.updateReservation$.next();
         }
       }),
@@ -113,6 +125,7 @@ export class ReservationComponent implements OnInit {
             reservation: this.reservation,
             paymentMethod: 'PAYPAL'
           });
+          this.loadBills$.next();
           this.updateReservation$.next();
         }
       }),
@@ -123,7 +136,7 @@ export class ReservationComponent implements OnInit {
   deleteJourney(reservedJourneyModel: ReservedJourneyModel) {
     this.reservationService.deleteReservedJourney(reservedJourneyModel).pipe(
       tap(() => {
-        this.reloadUnpaidReservations$.next();
+        this.loadUnpaidReservations$.next();
         this.journeyService.notifyJourney();
       }),
       untilDestroyed(this)
@@ -131,7 +144,6 @@ export class ReservationComponent implements OnInit {
   }
 
   calculateTotalPrice(): number {
-
     return this.reservation ? this.reservation?.reservedJourneys.reduce((total, reservedJourney) => {
       total += reservedJourney.journey.price * reservedJourney.seats;
       return total;

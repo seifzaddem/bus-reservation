@@ -1,0 +1,24 @@
+<div class="paid-reservation">
+  <div>Voici vos réservation payées</div>
+  <table [dataSource]="bills" class="paid-reservation__table" mat-table>
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell>Identifiant</th>
+      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPrice">
+      <th *matHeaderCellDef mat-header-cell>Prix total</th>
+      <td *matCellDef="let element" mat-cell> {{element.reservation.totalPrice | currency : 'EUR'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="paymentMethod">
+      <th *matHeaderCellDef mat-header-cell>Méthode de paiement</th>
+      <td *matCellDef="let element" mat-cell> {{element.paymentMethod}} </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+
+</div>
