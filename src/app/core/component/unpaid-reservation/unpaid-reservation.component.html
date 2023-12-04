@@ -45,7 +45,7 @@
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
 
-  <div *ngIf="reservation">Prix total : {{calculateTotalPrice() | currency : 'EUR'}}</div>
+  <div *ngIf="reservation">Prix total : {{reservation.totalPrice | currency : 'EUR'}}</div>
 
   <div>
     <button (click)="openCreditCardPaymentModal()" [disabled]="!areJourneysReserved()" color="primary"

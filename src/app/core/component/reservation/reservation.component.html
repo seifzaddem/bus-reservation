@@ -1,6 +1,10 @@
 <mat-tab-group mat-align-tabs="start">
-  <mat-tab label="Réservations payées">Content 1</mat-tab>
+  <mat-tab label="Réservations payées">
+    <app-paid-reservation [client]="client"></app-paid-reservation>
+  </mat-tab>
   <mat-tab label="Réservations non payées">
-    <app-pending-reservation [client]="client"></app-pending-reservation>
+    <app-pending-reservation (OnDeleteJourney)="deleteJourney($event)" (onCreditCardPayment)="openCreditCardPaymentModal()"
+                             (onPaypalPayment)="openPaypalPaymentModal()"
+                             [reservation]="reservation"></app-pending-reservation>
   </mat-tab>
 </mat-tab-group>
