@@ -17,6 +17,17 @@
       <td *matCellDef="let element" mat-cell> {{element.paymentMethod}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="journeys">
+      <th *matHeaderCellDef mat-header-cell>Trajets</th>
+      <td *matCellDef="let element" mat-cell>
+        <button (click)="openPaidJourneyModal(element.reservation.reservedJourneys, element.reservation.totalPrice)"
+                mat-icon-button
+                type="button">
+          <mat-icon color="primary">remove_red_eye</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>

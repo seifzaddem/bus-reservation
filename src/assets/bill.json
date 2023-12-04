@@ -1,0 +1,37 @@
+[
+  {
+    "reservation": {
+      "id": "88aca4e1-d6b8-4357-a9f0-11dd4dee04d4",
+      "clientId": 1,
+      "reservedJourneys": [
+        {
+          "id": "8a55eab0-d72f-4953-9bcf-7a996feaaddf",
+          "journey": {
+            "id": 1,
+            "bus": {
+              "serial": 101,
+              "seats": 50
+            },
+            "departure": {
+              "id": 1,
+              "name": "Paris"
+            },
+            "arrival": {
+              "id": 2,
+              "name": "Marseille"
+            },
+            "date": "2024-01-01T08:00:00",
+            "price": 30,
+            "availableSeats": 48
+          },
+          "seats": 1,
+          "clientId": 1
+        }
+      ],
+      "status": "PAID",
+      "totalPrice": 28.5
+    },
+    "paymentMethod": "PAYPAL",
+    "id": "a742caeb-183a-4dc9-b129-cf9638230e74"
+  }
+]

@@ -17,3 +17,8 @@ export interface ReservedJourneyModel {
   clientId: number;
   seats: number;
 }
+
+export interface PaidJourneyWrapper {
+  reservedJourneys: ReservedJourneyModel[];
+  totalPrice: number
+}

@@ -26,7 +26,8 @@ import {
 } from './component/credit-card-payment-modal/credit-card-payment-modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {PaypalPaymentModalComponent} from './component/paypal-payment-modal/paypal-payment-modal.component';
-import { PaidReservationComponent } from './component/paid-reservation/paid-reservation.component';
+import {PaidReservationComponent} from './component/paid-reservation/paid-reservation.component';
+import {PaidJourneyModalComponent} from './component/paid-journey-modal/paid-journey-modal.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { PaidReservationComponent } from './component/paid-reservation/paid-rese
     UnpaidReservationComponent,
     CreditCardPaymentModalComponent,
     PaypalPaymentModalComponent,
-    PaidReservationComponent
+    PaidReservationComponent,
+    PaidJourneyModalComponent
   ],
   imports: [
     CommonModule,

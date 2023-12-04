@@ -9,8 +9,9 @@ import {ReservationModel} from '../../model/reservation.model';
 import {ReservationService} from '../../service/reservation.service';
 import {BillModel} from '../../model/bill.model';
 import {BillService} from '../../service/bill.service';
-import {ReservedJourneyModel} from '../../model/journey.model';
+import {PaidJourneyWrapper, ReservedJourneyModel} from '../../model/journey.model';
 import {JourneyService} from '../../service/journey.service';
+import {PaidJourneyModalComponent} from '../paid-journey-modal/paid-journey-modal.component';
 
 @UntilDestroy()
 @Component({
@@ -150,4 +151,14 @@ export class ReservationComponent implements OnInit {
     }, 0) : 0;
   }
 
+  openPaidJourneysModal(paidJourneyWrapper: PaidJourneyWrapper) {
+    this.matDialog.open(PaidJourneyModalComponent, {
+      width: '50%',
+      height: '50%',
+      data: {
+        reservedJourneys: paidJourneyWrapper.reservedJourneys,
+        totalPrice: paidJourneyWrapper.totalPrice
+      }
+    })
+  }
 }

@@ -4,6 +4,7 @@ import {JourneyService} from './core/service/journey.service';
 import {ReservationService} from './core/service/reservation.service';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {tap} from 'rxjs';
+import {BillService} from './core/service/bill.service';
 
 @UntilDestroy()
 @Component({
@@ -22,9 +23,10 @@ import {tap} from 'rxjs';
 export class AppComponent implements OnInit {
 
   constructor(private journeyService: JourneyService,
+              private billService: BillService,
               private reservationService: ReservationService) {
   }
-  
+
   ngOnInit(): void {
 
     this.journeyService.getJourneys().pipe(
@@ -34,6 +36,11 @@ export class AppComponent implements OnInit {
 
     this.reservationService.getReservations().pipe(
       tap(reservations => localStorage.setItem("reservations", JSON.stringify(reservations))),
+      untilDestroyed(this)
+    ).subscribe();
+
+    this.billService.getBills().pipe(
+      tap(bills => localStorage.setItem("bills", JSON.stringify(bills))),
       untilDestroyed(this)
     ).subscribe();
 

@@ -1,0 +1,42 @@
+<div class="paid-journey">
+  <div>Voici vos trajets</div>
+  <table [dataSource]="data?.reservedJourneys" class="paid-journey__table" mat-table>
+
+    <ng-container matColumnDef="departure">
+      <th *matHeaderCellDef mat-header-cell>Départ</th>
+      <td *matCellDef="let element" mat-cell> {{element.journey.departure.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="arrival">
+      <th *matHeaderCellDef mat-header-cell>Arrivée</th>
+      <td *matCellDef="let element" mat-cell> {{element.journey.arrival.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th *matHeaderCellDef mat-header-cell>Date</th>
+      <td *matCellDef="let element" mat-cell> {{element.journey.date | date: 'medium'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pricePerSeat">
+      <th *matHeaderCellDef mat-header-cell>Prix par place</th>
+      <td *matCellDef="let element" mat-cell> {{element.journey.price | currency : 'EUR'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="seats">
+      <th *matHeaderCellDef mat-header-cell>Sièges</th>
+      <td *matCellDef="let element" mat-cell> {{element.seats}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPrice">
+      <th *matHeaderCellDef mat-header-cell>Prix total</th>
+      <td *matCellDef="let element" mat-cell> {{element.journey.price * element.seats | currency : 'EUR'}} </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+
+  <div>Prix total après éventuelles déductions : {{data.totalPrice | currency : 'EUR'}}</div>
+
+
+</div>
